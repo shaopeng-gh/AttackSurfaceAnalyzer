@@ -1,0 +1,134 @@
+{
+  "results": {
+    "FILE_MODIFIED": [
+      {
+        "Analysis": "DEBUG",
+        "Base": {
+          "Created": "2021-10-08T04:18:58.206822Z",
+          "Group": "S-1-12-1-1613650695-1152925323-3004084401-3676713700",
+          "Identity": "C:\\Test\\Scan\\ToBeModified.txt",
+          "LastModified": "2021-10-08T04:19:12.4498613Z",
+          "Owner": "S-1-12-1-1613650695-1152925323-3004084401-3676713700",
+          "Path": "C:\\Test\\Scan\\ToBeModified.txt",
+          "Permissions": {
+            "S-1-5-11": "Modify, Synchronize",
+            "S-1-5-18": "FullControl",
+            "S-1-5-32-544": "FullControl",
+            "S-1-5-32-545": "ReadAndExecute, Synchronize"
+          },
+          "Size": 5,
+          "ResultType": "FILE"
+        },
+        "BaseRunId": "10/7/2021 9:21:33 PM-before",
+        "ChangeType": "MODIFIED",
+        "Compare": {
+          "Created": "2021-10-08T04:18:58.206822Z",
+          "Group": "S-1-12-1-1613650695-1152925323-3004084401-3676713700",
+          "Identity": "C:\\Test\\Scan\\ToBeModified.txt",
+          "LastModified": "2021-10-08T04:22:04.3198988Z",
+          "Owner": "S-1-12-1-1613650695-1152925323-3004084401-3676713700",
+          "Path": "C:\\Test\\Scan\\ToBeModified.txt",
+          "Permissions": {
+            "NT AUTHORITY\\Authenticated Users": "Modify, Synchronize",
+            "NT AUTHORITY\\SYSTEM": "FullControl",
+            "BUILTIN\\Administrators": "FullControl",
+            "BUILTIN\\Users": "ReadAndExecute, Synchronize"
+          },
+          "Size": 13,
+          "ResultType": "FILE"
+        },
+        "CompareRunId": "10/7/2021 9:21:33 PM-after",
+        "Diffs": [
+          {
+            "After": "2021-10-08T04:22:04.3198988Z",
+            "Before": "2021-10-08T04:19:12.4498613Z",
+            "Field": "LastModified"
+          },
+          {
+            "After": {
+              "NT AUTHORITY\\Authenticated Users": "Modify, Synchronize",
+              "NT AUTHORITY\\SYSTEM": "FullControl",
+              "BUILTIN\\Administrators": "FullControl",
+              "BUILTIN\\Users": "ReadAndExecute, Synchronize"
+            },
+            "Field": "Permissions"
+          },
+          {
+            "Before": {
+              "S-1-5-11": "Modify, Synchronize",
+              "S-1-5-18": "FullControl",
+              "S-1-5-32-544": "FullControl",
+              "S-1-5-32-545": "ReadAndExecute, Synchronize"
+            },
+            "Field": "Permissions"
+          },
+          {
+            "After": 13,
+            "Before": 5,
+            "Field": "Size"
+          }
+        ],
+        "Identity": "C:\\Test\\Scan\\ToBeModified.txt",
+        "ResultType": "FILE"
+      }
+    ],
+    "FILE_CREATED": [
+      {
+        "Analysis": "DEBUG",
+        "BaseRunId": "10/7/2021 9:21:33 PM-before",
+        "ChangeType": "CREATED",
+        "Compare": {
+          "Created": "2021-10-08T04:22:11.5727345Z",
+          "Group": "S-1-12-1-1613650695-1152925323-3004084401-3676713700",
+          "Identity": "C:\\Test\\Scan\\NewlyCreated.txt",
+          "LastModified": "2021-10-08T04:22:11.5727345Z",
+          "Owner": "S-1-12-1-1613650695-1152925323-3004084401-3676713700",
+          "Path": "C:\\Test\\Scan\\NewlyCreated.txt",
+          "Permissions": {
+            "NT AUTHORITY\\Authenticated Users": "Modify, Synchronize",
+            "NT AUTHORITY\\SYSTEM": "FullControl",
+            "BUILTIN\\Administrators": "FullControl",
+            "BUILTIN\\Users": "ReadAndExecute, Synchronize"
+          },
+          "Size": 0,
+          "ResultType": "FILE"
+        },
+        "CompareRunId": "10/7/2021 9:21:33 PM-after",
+        "Identity": "C:\\Test\\Scan\\NewlyCreated.txt",
+        "ResultType": "FILE"
+      }
+    ],
+    "FILE_DELETED": [
+      {
+        "Analysis": "DEBUG",
+        "Base": {
+          "Created": "2021-10-08T04:18:43.2799276Z",
+          "Group": "S-1-12-1-1613650695-1152925323-3004084401-3676713700",
+          "Identity": "C:\\Test\\Scan\\ToBeDeleted.txt",
+          "LastModified": "2021-10-08T04:18:43.2799276Z",
+          "Owner": "S-1-12-1-1613650695-1152925323-3004084401-3676713700",
+          "Path": "C:\\Test\\Scan\\ToBeDeleted.txt",
+          "Permissions": {
+            "S-1-5-11": "Modify, Synchronize",
+            "S-1-5-18": "FullControl",
+            "S-1-5-32-544": "FullControl",
+            "S-1-5-32-545": "ReadAndExecute, Synchronize"
+          },
+          "Size": 0,
+          "ResultType": "FILE"
+        },
+        "BaseRunId": "10/7/2021 9:21:33 PM-before",
+        "ChangeType": "DELETED",
+        "CompareRunId": "10/7/2021 9:21:33 PM-after",
+        "Identity": "C:\\Test\\Scan\\ToBeDeleted.txt",
+        "ResultType": "FILE"
+      }
+    ]
+  },
+  "metadata": {
+    "compare-version": "2.4.9-alpha+18768e7dac",
+    "compare-os": "WINDOWS",
+    "compare-osversion": "Microsoft Windows NT 10.0.19043.0",
+    "analyses-hash": "yXvUiHy+rkKstAubfKrepSYhf7tGW6Fmpq72cvzjHu/IFkPu1P6FEstdy15fnGvxhAyIcIzdWFTILRTZ6wy0yA=="
+  }
+}

@@ -1,0 +1,652 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Attack Surface Analyzer",
+          "organization": "Microsoft",
+          "version": "2.4.9-alpha+18768e7dac",
+          "informationUri": "https://github.com/microsoft/AttackSurfaceAnalyzer/",
+          "rules": [
+            {
+              "id": "Privileged ports",
+              "fullDescription": {
+                "text": "Flag when privileged ports are opened."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "PORT"
+              }
+            },
+            {
+              "id": "Privileged users",
+              "fullDescription": {
+                "text": "Flag when privileged users are modified."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "USER"
+              }
+            },
+            {
+              "id": "Hidden users",
+              "fullDescription": {
+                "text": "Flag when hidden user accounts are modified."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "USER"
+              }
+            },
+            {
+              "id": "Unsigned binaries",
+              "fullDescription": {
+                "text": "Flag when unsigned/incorrectly signed binaries are added."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,MODIFIED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "SetUid",
+              "fullDescription": {
+                "text": "Flag UID is set on a file."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,MODIFIED",
+                "Platforms": "LINUX,MACOS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "SetGid",
+              "fullDescription": {
+                "text": "Flag GID is set on a file."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,MODIFIED",
+                "Platforms": "LINUX,MACOS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Missing ASLR",
+              "fullDescription": {
+                "text": "Flag when executables are created without ASLR."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Missing DEP",
+              "fullDescription": {
+                "text": "Flag when executables are created without DEP."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Missing Signed Enforcement",
+              "fullDescription": {
+                "text": "Flag when executables are signed binaries are created without Force Integrity Flag."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Certificates",
+              "fullDescription": {
+                "text": "Flag when certificates are placed on disk."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "UPNP Ports",
+              "fullDescription": {
+                "text": "Universal Plug n' Play."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "PORT"
+              }
+            },
+            {
+              "id": "Keystore Files",
+              "fullDescription": {
+                "text": "Java keystore files contain encryption keys and certificates."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Firewall Settings Modified",
+              "fullDescription": {
+                "text": "Flag when OS X firewall settings are modified."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "MACOS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "COM Objects Modified",
+              "fullDescription": {
+                "text": "Flags when a COM Object has been Added, Removed or Modified."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "REGISTRY"
+              }
+            },
+            {
+              "id": "Weak Permissions on UID Binaries",
+              "fullDescription": {
+                "text": "Flags if a binary is Executable by everyone but has SETUID."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "LINUX,MACOS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Weak Permissions on GID Binaries",
+              "fullDescription": {
+                "text": "Flags if a binary is Executable by everyone but has SETGID."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "LINUX,MACOS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "SIP Violation",
+              "fullDescription": {
+                "text": "Flags if System Integrity Protection prevented an action."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "MACOS",
+                "ResultType": "LOG"
+              }
+            },
+            {
+              "id": "Signatory Change",
+              "fullDescription": {
+                "text": "Flag when the signatory of an executable changes."
+              },
+              "properties": {
+                "ChangeTypes": "MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Modified Items in Program Files",
+              "fullDescription": {
+                "text": "Flag when the a file is modified in Program files."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "ChangeTypes": "MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Modified Items in System Files",
+              "fullDescription": {
+                "text": "Flag when the a file is modified in System files."
+              },
+              "properties": {
+                "ChangeTypes": "MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Frequently attacked binaries",
+              "fullDescription": {
+                "text": "List from GTFOBINS."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "LINUX,MACOS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Modified Services",
+              "fullDescription": {
+                "text": "Flag when a startup item is modified."
+              },
+              "properties": {
+                "ChangeTypes": "MODIFIED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "SERVICE"
+              }
+            },
+            {
+              "id": "Modified Hosts File",
+              "fullDescription": {
+                "text": "Flag when the hosts file is modified."
+              },
+              "properties": {
+                "ChangeTypes": "MODIFIED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Signed File was modified",
+              "fullDescription": {
+                "text": "A signed file was modified."
+              },
+              "properties": {
+                "ChangeTypes": "MODIFIED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Files Frequently Modified by Windows",
+              "fullDescription": {
+                "text": "These files are frequently modified by the system itself."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Registry Keys Frequently Modified by Windows",
+              "fullDescription": {
+                "text": "These registry keys are Frequently modified by the system itself."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "REGISTRY"
+              }
+            },
+            {
+              "id": "Files Frequently Modified by Macos",
+              "fullDescription": {
+                "text": "These files are Frequently modified by the system itself."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "MACOS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "LOLBAS List",
+              "fullDescription": {
+                "text": "This is the LOLBAS items which are not included in the other system file rules."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "Expired Certificates",
+              "fullDescription": {
+                "text": "These Certificates are expired."
+              },
+              "properties": {
+                "ChangeTypes": "MODIFIED,CREATED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "CERTIFICATE"
+              }
+            },
+            {
+              "id": "Binaries with expired signatures",
+              "fullDescription": {
+                "text": "These binaries have expired signatures."
+              },
+              "properties": {
+                "ChangeTypes": "MODIFIED,CREATED",
+                "Platforms": "LINUX,MACOS,WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "TPM Keys",
+              "fullDescription": {
+                "text": "These TPM Keys have been changed."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "FILE"
+              }
+            },
+            {
+              "id": "TPM Auth Values Changed",
+              "fullDescription": {
+                "text": "These TPM Auth Values have been changed in the registry."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "REGISTRY"
+              }
+            },
+            {
+              "id": "TPM Endorsement Auth Value",
+              "fullDescription": {
+                "text": "The TPM Endorsement Auth was changed."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "REGISTRY"
+              }
+            },
+            {
+              "id": "Use Null Derived Owner Auth Changed",
+              "fullDescription": {
+                "text": "The UseNullDerivedOwnerAuth setting was changed."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "REGISTRY"
+              }
+            },
+            {
+              "id": "OS Managed Auth Level Changed",
+              "fullDescription": {
+                "text": "The TPM OS Managed Auth Level was Changed."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "REGISTRY"
+              }
+            },
+            {
+              "id": "SHA Root of Trust Modified",
+              "fullDescription": {
+                "text": "The systems root of trust has been modified."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS,LINUX",
+                "ResultType": "TPM"
+              }
+            },
+            {
+              "id": "SHA256 Root of Trust Modified",
+              "fullDescription": {
+                "text": "The systems root of trust has been modified."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS,LINUX",
+                "ResultType": "TPM"
+              }
+            },
+            {
+              "id": "SHA384 Root of Trust Modified",
+              "fullDescription": {
+                "text": "The systems root of trust has been modified."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS,LINUX",
+                "ResultType": "TPM"
+              }
+            },
+            {
+              "id": "SHA512 Root of Trust Modified",
+              "fullDescription": {
+                "text": "The systems root of trust has been modified."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS,LINUX",
+                "ResultType": "TPM"
+              }
+            },
+            {
+              "id": "SM3_256 Root of Trust Modified",
+              "fullDescription": {
+                "text": "The systems root of trust has been modified."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS,LINUX",
+                "ResultType": "TPM"
+              }
+            },
+            {
+              "id": "Group Policy Modified",
+              "fullDescription": {
+                "text": "These registry keys track group policy history and modification may indicate a change in group policy."
+              },
+              "properties": {
+                "ChangeTypes": "CREATED,DELETED,MODIFIED",
+                "Platforms": "WINDOWS",
+                "ResultType": "REGISTRY"
+              }
+            }
+          ]
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Test/Scan2/TestModifyExe.exe",
+            "index": 0,
+            "description": {
+              "text": "C:\\Test\\Scan2\\TestModifyExe.exe"
+            }
+          },
+          "properties": {
+            "Analysis": "WARNING",
+            "Base": {"ContentHash":"7QGAoQeCLD64FeGxlSoeW5eHcACmyBrT1HIv+YOGVi2Of6c88DR6+Uk1O2zemHCGXAeJrtc+COi8yqHrnpX8Zg==","Created":"2021-10-14T23:36:58.0340629Z","FileType":null,"Group":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Identity":"C:\\Test\\Scan2\\TestModifyExe.exe","IsDirectory":null,"IsExecutable":true,"IsLink":null,"LastModified":"2021-10-13T03:05:24.3286411Z","MacSignatureStatus":null,"Owner":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Path":"C:\\Test\\Scan2\\TestModifyExe.exe","Permissions":{"S-1-5-11":"Modify, Synchronize","S-1-5-18":"FullControl","S-1-5-32-544":"FullControl","S-1-5-32-545":"ReadAndExecute, Synchronize"},"PermissionsString":null,"SetGid":null,"SetUid":null,"SignatureStatus":null,"Size":726896,"SizeOnDisk":null,"Target":null,"ResultType":1},
+            "BaseRunId": "2021-10-14T16:40:08.6642182-07:00",
+            "ChangeType": "MODIFIED",
+            "Compare": {"ContentHash":"Qpr6h4sgWi9HvNaKn1kWmznUifwU+8Uw6RjczVpkzx/LlGSyJgEhQ9pkMe6sX3wo9gwLmZicOIelU2b9NncLiw==","Created":"2021-10-14T23:36:58.0340629Z","FileType":null,"Group":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Identity":"C:\\Test\\Scan2\\TestModifyExe.exe","IsDirectory":null,"IsExecutable":true,"IsLink":null,"LastModified":"2021-10-14T23:41:11.6798321Z","MacSignatureStatus":null,"Owner":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Path":"C:\\Test\\Scan2\\TestModifyExe.exe","Permissions":{"S-1-5-11":"Modify, Synchronize","S-1-5-18":"FullControl","S-1-5-32-544":"FullControl","S-1-5-32-545":"ReadAndExecute, Synchronize"},"PermissionsString":null,"SetGid":null,"SetUid":null,"SignatureStatus":{"IsTimeValid":false,"IsAuthenticodeValid":false,"SignedHash":null,"SignerSerialNumber":null,"SigningCertificate":null},"Size":343480,"SizeOnDisk":null,"Target":null,"ResultType":1},
+            "CompareRunId": "2021-10-14T16:44:27.3260573-07:00",
+            "Diffs": [{"After":"Qpr6h4sgWi9HvNaKn1kWmznUifwU+8Uw6RjczVpkzx/LlGSyJgEhQ9pkMe6sX3wo9gwLmZicOIelU2b9NncLiw==","Before":"7QGAoQeCLD64FeGxlSoeW5eHcACmyBrT1HIv+YOGVi2Of6c88DR6+Uk1O2zemHCGXAeJrtc+COi8yqHrnpX8Zg==","Field":"ContentHash"},{"After":"2021-10-14T23:41:11.6798321Z","Before":"2021-10-13T03:05:24.3286411Z","Field":"LastModified"},{"After":{"IsTimeValid":false,"IsAuthenticodeValid":false,"SignedHash":null,"SignerSerialNumber":null,"SigningCertificate":null},"Before":null,"Field":"SignatureStatus"},{"After":343480,"Before":726896,"Field":"Size"}],
+            "ResultType": "FILE"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Test/Scan2/TestAddText.txt",
+            "index": 1,
+            "description": {
+              "text": "C:\\Test\\Scan2\\TestAddText.txt"
+            }
+          },
+          "properties": {
+            "Analysis": "DEBUG",
+            "BaseRunId": "2021-10-14T16:40:08.6642182-07:00",
+            "ChangeType": "CREATED",
+            "Compare": {"ContentHash":"U5vuoQXdbgnk9XHXG35PFwb90oyl1iXPq63NYaMrIqpkQVU6X+ntJF7D57ZJFufpTXgPvR2zgqZu/anwz+wd2Q==","Created":"2021-10-14T23:41:18.3939762Z","FileType":null,"Group":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Identity":"C:\\Test\\Scan2\\TestAddText.txt","IsDirectory":null,"IsExecutable":null,"IsLink":null,"LastModified":"2021-10-14T23:43:53.0879739Z","MacSignatureStatus":null,"Owner":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Path":"C:\\Test\\Scan2\\TestAddText.txt","Permissions":{"S-1-5-11":"Modify, Synchronize","S-1-5-18":"FullControl","S-1-5-32-544":"FullControl","S-1-5-32-545":"ReadAndExecute, Synchronize"},"PermissionsString":null,"SetGid":null,"SetUid":null,"SignatureStatus":null,"Size":19,"SizeOnDisk":null,"Target":null,"ResultType":1},
+            "CompareRunId": "2021-10-14T16:44:27.3260573-07:00",
+            "ResultType": "FILE"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Test/Scan2/TestAddExe.exe",
+            "index": 2,
+            "description": {
+              "text": "C:\\Test\\Scan2\\TestAddExe.exe"
+            }
+          },
+          "properties": {
+            "Analysis": "WARNING",
+            "BaseRunId": "2021-10-14T16:40:08.6642182-07:00",
+            "ChangeType": "CREATED",
+            "Compare": {"ContentHash":"3ptaDfkOhjUOM6QE2HoSCAasWmp9TR77AZVXRHniF8tWDXj1YT0rrjcxQAQmpOnxh31uVxfk0hqPyBbPWddeyA==","Created":"2021-10-14T23:40:20.957942Z","FileType":null,"Group":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Identity":"C:\\Test\\Scan2\\TestAddExe.exe","IsDirectory":null,"IsExecutable":true,"IsLink":null,"LastModified":"2021-10-13T03:05:24.3286411Z","MacSignatureStatus":null,"Owner":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Path":"C:\\Test\\Scan2\\TestAddExe.exe","Permissions":{"S-1-5-11":"Modify, Synchronize","S-1-5-18":"FullControl","S-1-5-32-544":"FullControl","S-1-5-32-545":"ReadAndExecute, Synchronize"},"PermissionsString":null,"SetGid":null,"SetUid":null,"SignatureStatus":null,"Size":726896,"SizeOnDisk":null,"Target":null,"ResultType":1},
+            "CompareRunId": "2021-10-14T16:44:27.3260573-07:00",
+            "ResultType": "FILE"
+          }
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "Missing ASLR",
+          "message": {
+            "text": "Missing ASLR: C:\\Test\\Scan2\\TestModifyExe.exe (MODIFIED)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "Missing DEP",
+          "message": {
+            "text": "Missing DEP: C:\\Test\\Scan2\\TestModifyExe.exe (MODIFIED)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "Unsigned binaries",
+          "message": {
+            "text": "Unsigned binaries: C:\\Test\\Scan2\\TestModifyExe.exe (MODIFIED)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "Missing DEP",
+          "message": {
+            "text": "Missing DEP: C:\\Test\\Scan2\\TestAddExe.exe (CREATED)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "Missing ASLR",
+          "message": {
+            "text": "Missing ASLR: C:\\Test\\Scan2\\TestAddExe.exe (CREATED)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "Unsigned binaries",
+          "message": {
+            "text": "Unsigned binaries: C:\\Test\\Scan2\\TestAddExe.exe (CREATED)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 2
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits",
+      "properties": {
+        "compare-os": "WINDOWS",
+        "compare-osversion": "Microsoft Windows NT 10.0.19043.0",
+        "analyses-hash": "yXvUiHy+rkKstAubfKrepSYhf7tGW6Fmpq72cvzjHu/IFkPu1P6FEstdy15fnGvxhAyIcIzdWFTILRTZ6wy0yA=="
+      }
+    }
+  ]
+}

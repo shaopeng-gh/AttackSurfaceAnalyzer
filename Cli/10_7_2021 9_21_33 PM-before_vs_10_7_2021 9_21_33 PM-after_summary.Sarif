@@ -1,0 +1,109 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Attack Surface Analyzer",
+          "rules": [
+            {
+              "id": "FILE_MODIFIED",
+              "name": "FILE_MODIFIED"
+            },
+            {
+              "id": "FILE_CREATED",
+              "name": "FILE_CREATED"
+            },
+            {
+              "id": "FILE_DELETED",
+              "name": "FILE_DELETED"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "FILE_MODIFIED",
+          "level": "note",
+          "message": {
+            "text": "MODIFIED: C:\\Test\\Scan\\ToBeModified.txt"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Test/Scan/ToBeModified.txt"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "ResultType": "FILE",
+            "ChangeType": "MODIFIED",
+            "BaseRunId": "10/7/2021 9:21:33 PM-before",
+            "CompareRunId": "10/7/2021 9:21:33 PM-after",
+            "Base": {"ContentHash":null,"Created":"2021-10-08T04:18:58.206822Z","FileType":null,"Group":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Identity":"C:\\Test\\Scan\\ToBeModified.txt","IsDirectory":null,"IsExecutable":null,"IsLink":null,"LastModified":"2021-10-08T04:19:12.4498613Z","MacSignatureStatus":null,"Owner":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Path":"C:\\Test\\Scan\\ToBeModified.txt","Permissions":{"S-1-5-11":"Modify, Synchronize","S-1-5-18":"FullControl","S-1-5-32-544":"FullControl","S-1-5-32-545":"ReadAndExecute, Synchronize"},"PermissionsString":null,"SetGid":null,"SetUid":null,"SignatureStatus":null,"Size":5,"SizeOnDisk":null,"Target":null,"ResultType":1},
+            "Compare": {"ContentHash":null,"Created":"2021-10-08T04:18:58.206822Z","FileType":null,"Group":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Identity":"C:\\Test\\Scan\\ToBeModified.txt","IsDirectory":null,"IsExecutable":null,"IsLink":null,"LastModified":"2021-10-08T04:22:04.3198988Z","MacSignatureStatus":null,"Owner":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Path":"C:\\Test\\Scan\\ToBeModified.txt","Permissions":{"NT AUTHORITY\\Authenticated Users":"Modify, Synchronize","NT AUTHORITY\\SYSTEM":"FullControl","BUILTIN\\Administrators":"FullControl","BUILTIN\\Users":"ReadAndExecute, Synchronize"},"PermissionsString":null,"SetGid":null,"SetUid":null,"SignatureStatus":null,"Size":13,"SizeOnDisk":null,"Target":null,"ResultType":1},
+            "Diffs": [{"After":"2021-10-08T04:22:04.3198988Z","Before":"2021-10-08T04:19:12.4498613Z","Field":"LastModified"},{"After":{"NT AUTHORITY\\Authenticated Users":"Modify, Synchronize","NT AUTHORITY\\SYSTEM":"FullControl","BUILTIN\\Administrators":"FullControl","BUILTIN\\Users":"ReadAndExecute, Synchronize"},"Before":null,"Field":"Permissions"},{"After":null,"Before":{"S-1-5-11":"Modify, Synchronize","S-1-5-18":"FullControl","S-1-5-32-544":"FullControl","S-1-5-32-545":"ReadAndExecute, Synchronize"},"Field":"Permissions"},{"After":13,"Before":5,"Field":"Size"}],
+            "Rules": [],
+            "AnalysesHash": "yXvUiHy+rkKstAubfKrepSYhf7tGW6Fmpq72cvzjHu/IFkPu1P6FEstdy15fnGvxhAyIcIzdWFTILRTZ6wy0yA=="
+          }
+        },
+        {
+          "ruleId": "FILE_CREATED",
+          "level": "note",
+          "message": {
+            "text": "CREATED: C:\\Test\\Scan\\NewlyCreated.txt"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Test/Scan/NewlyCreated.txt"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "ResultType": "FILE",
+            "ChangeType": "CREATED",
+            "BaseRunId": "10/7/2021 9:21:33 PM-before",
+            "CompareRunId": "10/7/2021 9:21:33 PM-after",
+            "Compare": {"ContentHash":null,"Created":"2021-10-08T04:22:11.5727345Z","FileType":null,"Group":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Identity":"C:\\Test\\Scan\\NewlyCreated.txt","IsDirectory":null,"IsExecutable":null,"IsLink":null,"LastModified":"2021-10-08T04:22:11.5727345Z","MacSignatureStatus":null,"Owner":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Path":"C:\\Test\\Scan\\NewlyCreated.txt","Permissions":{"NT AUTHORITY\\Authenticated Users":"Modify, Synchronize","NT AUTHORITY\\SYSTEM":"FullControl","BUILTIN\\Administrators":"FullControl","BUILTIN\\Users":"ReadAndExecute, Synchronize"},"PermissionsString":null,"SetGid":null,"SetUid":null,"SignatureStatus":null,"Size":0,"SizeOnDisk":null,"Target":null,"ResultType":1},
+            "Diffs": [],
+            "Rules": [],
+            "AnalysesHash": "yXvUiHy+rkKstAubfKrepSYhf7tGW6Fmpq72cvzjHu/IFkPu1P6FEstdy15fnGvxhAyIcIzdWFTILRTZ6wy0yA=="
+          }
+        },
+        {
+          "ruleId": "FILE_DELETED",
+          "level": "note",
+          "message": {
+            "text": "DELETED: C:\\Test\\Scan\\ToBeDeleted.txt"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Test/Scan/ToBeDeleted.txt"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "ResultType": "FILE",
+            "ChangeType": "DELETED",
+            "BaseRunId": "10/7/2021 9:21:33 PM-before",
+            "CompareRunId": "10/7/2021 9:21:33 PM-after",
+            "Base": {"ContentHash":null,"Created":"2021-10-08T04:18:43.2799276Z","FileType":null,"Group":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Identity":"C:\\Test\\Scan\\ToBeDeleted.txt","IsDirectory":null,"IsExecutable":null,"IsLink":null,"LastModified":"2021-10-08T04:18:43.2799276Z","MacSignatureStatus":null,"Owner":"S-1-12-1-1613650695-1152925323-3004084401-3676713700","Path":"C:\\Test\\Scan\\ToBeDeleted.txt","Permissions":{"S-1-5-11":"Modify, Synchronize","S-1-5-18":"FullControl","S-1-5-32-544":"FullControl","S-1-5-32-545":"ReadAndExecute, Synchronize"},"PermissionsString":null,"SetGid":null,"SetUid":null,"SignatureStatus":null,"Size":0,"SizeOnDisk":null,"Target":null,"ResultType":1},
+            "Diffs": [],
+            "Rules": [],
+            "AnalysesHash": "yXvUiHy+rkKstAubfKrepSYhf7tGW6Fmpq72cvzjHu/IFkPu1P6FEstdy15fnGvxhAyIcIzdWFTILRTZ6wy0yA=="
+          }
+        }
+      ],
+      "columnKind": "utf16CodeUnits"
+    }
+  ]
+}

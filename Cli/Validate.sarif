@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "Sarif.Multitool",
+          "organization": "Microsoft",
+          "product": "Microsoft SARIF SDK",
+          "fullName": "Sarif.Multitool 2.4.12.0",
+          "version": "2.4.12.0",
+          "semanticVersion": "2.4.12",
+          "properties": {
+            "Comments": "Command line tool to manipulate SARIF files."
+          }
+        }
+      },
+      "invocations": [
+        {
+          "startTimeUtc": "2021-10-18T02:48:12.081Z",
+          "endTimeUtc": "2021-10-18T02:48:14.114Z",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/GH/shaopeng-gh/AttackSurfaceAnalyzer/Cli/2021-10-14T16_40_08.6642182-07_00_vs_2021-10-14T16_44_27.3260573-07_00_summary.Sarif"
+          }
+        }
+      ],
+      "columnKind": "utf16CodeUnits"
+    }
+  ]
+}
